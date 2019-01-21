@@ -22,8 +22,8 @@
             <groupId>com.qfedu</groupId>
             <artifactId>School_Pojo</artifactId>
             <version>1.0.0</version>
-
         </dependency>
+
 
     </dependencies>
 

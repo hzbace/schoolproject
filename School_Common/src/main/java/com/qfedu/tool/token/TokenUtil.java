@@ -20,9 +20,6 @@ public class TokenUtil {
         token.setRandomnum(new Random().nextLong());
         String json = JSON.toJSONString(token);
         return EncryptUtil.AESEnc(Base64Util.base64Dec(SystemConst.TOKENKEY),json);
-
-
-
     }
     //更新Token的时间
     public static String updateToken(String token){

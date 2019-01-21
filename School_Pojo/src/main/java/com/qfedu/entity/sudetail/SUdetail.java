@@ -1,5 +1,6 @@
 package com.qfedu.entity.sudetail;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.qfedu.entity.base.BaseEntity;
 
 
@@ -22,8 +23,9 @@ public class SUdetail extends BaseEntity {
 
     private String dHeadimg;
 
-    private byte[] dTel;
+    private String dTel;
 
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     private LocalDate dBirth;
 
     private Integer dSex;
@@ -58,11 +60,11 @@ public class SUdetail extends BaseEntity {
         this.dHeadimg = dHeadimg;
     }
 
-    public byte[] getdTel() {
+    public String getdTel() {
         return dTel;
     }
 
-    public void setdTel(byte[] dTel) {
+    public void setdTel(String dTel) {
         this.dTel = dTel;
     }
 

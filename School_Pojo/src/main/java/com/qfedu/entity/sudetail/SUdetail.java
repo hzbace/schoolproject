@@ -1,10 +1,12 @@
 package com.qfedu.entity.sudetail;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.qfedu.entity.base.BaseEntity;
 
-
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * <p>
@@ -19,6 +21,7 @@ public class SUdetail extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(type = IdType.AUTO)
     private Integer dUid;
 
     private String dHeadimg;
@@ -26,7 +29,7 @@ public class SUdetail extends BaseEntity {
     private String dTel;
 
     @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
-    private LocalDate dBirth;
+    private Date dBirth;
 
     private Integer dSex;
 
@@ -68,11 +71,11 @@ public class SUdetail extends BaseEntity {
         this.dTel = dTel;
     }
 
-    public LocalDate getdBirth() {
+    public Date getdBirth() {
         return dBirth;
     }
 
-    public void setdBirth(LocalDate dBirth) {
+    public void setdBirth(Date dBirth) {
         this.dBirth = dBirth;
     }
 
@@ -122,5 +125,21 @@ public class SUdetail extends BaseEntity {
 
     public void setdHome(String dHome) {
         this.dHome = dHome;
+    }
+
+    @Override
+    public String toString() {
+        return "SUdetail{" +
+                "dUid=" + dUid +
+                ", dHeadimg='" + dHeadimg + '\'' +
+                ", dTel='" + dTel + '\'' +
+                ", dBirth=" + dBirth +
+                ", dSex=" + dSex +
+                ", dSnum='" + dSnum + '\'' +
+                ", dName='" + dName + '\'' +
+                ", dSign='" + dSign + '\'' +
+                ", dPro=" + dPro +
+                ", dHome='" + dHome + '\'' +
+                '}';
     }
 }

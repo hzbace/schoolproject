@@ -16,6 +16,7 @@ public class TokenUtil {
         LoginToken token = new LoginToken();
         token.setId(user.getUserid());
         token.setUser(user);
+
         token.setCreatetime(LocalDateTime.now());
         token.setRandomnum(new Random().nextLong());
         String json = JSON.toJSONString(token);
@@ -28,5 +29,13 @@ public class TokenUtil {
         loginToken.setCreatetime(LocalDateTime.now());
         loginToken.setRandomnum(new Random().nextLong());
         return EncryptUtil.AESEnc(Base64Util.base64Dec(SystemConst.TOKENKEY),JSON.toJSONString(loginToken));
+    }
+    //解析当前Token
+    public static SUser GetToken(String token){
+        String json = EncryptUtil.AESDec(Base64Util.base64Dec(SystemConst.TOKENKEY),token);
+        LoginToken loginToken = JSON.parseObject(json,LoginToken.class);
+        String user = JSON.toJSONString(loginToken.getUser());
+        SUser sUser = JSON.parseObject(user, SUser.class);
+        return sUser;
     }
 }

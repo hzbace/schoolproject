@@ -1,8 +1,8 @@
-package com.qfedu.dao.sfriend;
+package com.qfedu.dao.sgoods;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import com.qfedu.entity.sfriend.SFriend;
+import com.qfedu.entity.sgoods.SGoods;
 
 /**
  * <p>
@@ -12,6 +12,6 @@ import com.qfedu.entity.sfriend.SFriend;
  * @author java1806
  * @since 2019-01-24
  */
-public interface SFriendMapper extends BaseMapper<SFriend> {
+public interface SGoodsMapper extends BaseMapper<SGoods> {
 
 }

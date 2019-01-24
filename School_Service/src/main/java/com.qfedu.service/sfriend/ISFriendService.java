@@ -1,8 +1,9 @@
 package com.qfedu.service.sfriend;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-
 import com.qfedu.entity.sfriend.SFriend;
+import com.qfedu.tool.vo.ResultVo;
+
 
 /**
  * <p>
@@ -10,8 +11,10 @@ import com.qfedu.entity.sfriend.SFriend;
  * </p>
  *
  * @author java1806
- * @since 2019-01-17
+ * @since 2019-01-24
  */
-public interface ISFriendService extends IService<SFriend> {
+public interface ISFriendService {
+    //展示好友列表
+    ResultVo getAllFriend(String token);
 
 }

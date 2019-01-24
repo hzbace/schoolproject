@@ -20,5 +20,9 @@ public interface ISUserService  {
     ResultVo login(String usernum, String userpassword);
     //用户退出
     ResultVo loginout(String token);
+    //修改密码
+    ResultVo updatePassword(String userpassword, String newpassword, String token, String newpassword2);
+    //通过当前用户id查询学号
+    ResultVo getUsernum(String token);
 
 }

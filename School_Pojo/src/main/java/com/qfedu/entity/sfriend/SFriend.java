@@ -4,28 +4,39 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.qfedu.entity.base.BaseEntity;
 
+
 /**
  * <p>
  * 
  * </p>
  *
  * @author java1806
- * @since 2019-01-17
+ * @since 2019-01-24
  */
 
 public class SFriend extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "f_id", type = IdType.AUTO)
+    private Integer fId;
 
     private Integer fUid;
 
-    private Integer fOuid;
+    private Integer fFuid;
 
     private Integer fFlag;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
+    }
+
+    public Integer getfId() {
+        return fId;
+    }
+
+    public void setfId(Integer fId) {
+        this.fId = fId;
     }
 
     public Integer getfUid() {
@@ -36,12 +47,12 @@ public class SFriend extends BaseEntity {
         this.fUid = fUid;
     }
 
-    public Integer getfOuid() {
-        return fOuid;
+    public Integer getfFuid() {
+        return fFuid;
     }
 
-    public void setfOuid(Integer fOuid) {
-        this.fOuid = fOuid;
+    public void setfFuid(Integer fFuid) {
+        this.fFuid = fFuid;
     }
 
     public Integer getfFlag() {
